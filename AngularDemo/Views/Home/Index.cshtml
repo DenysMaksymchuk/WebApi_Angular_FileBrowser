@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div ng-controller="homeController as vm">
+    <div>
+        current path - {{vm.data.path}}
+    </div>
+    <br />
+    <div ng-repeat="folder in vm.data.foldersList ">
+        <div><a href="#" ng-click="vm.getFolderInfo(folder.path.substring(0, 1),folder.path.substring(2))">{{folder.name}}</a></div>
+    </div>
+    <div ng-repeat="file in vm.data.filesList ">
+        {{file.name}}
+
+    </div>
+    
+    
+</div>
